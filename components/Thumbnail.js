@@ -2,11 +2,9 @@
 import Image from 'next/image';
 import { ThumbUpIcon,DownloadIcon,EyeIcon } from "@heroicons/react/outline";
 
-import { forwardRef } from 'react';
-
-const Thumbnail = forwardRef(({result},ref) => {
+function Thumbnail({result}){
   return (
-    <div ref={ref} className='group cursor-pointer p-2 transition-all duration-200 ease-in transform sm:hover:scale-105 hover:z-50'>
+    <div className='group cursor-pointer p-2 transition-all duration-200 ease-in transform sm:hover:scale-105 hover:z-50'>
       <Image layout='responsive' src={result.largeImageURL}
         height={1080} width={1920}  alt='Thumbnails' />
       <div className='p-2'>
@@ -31,6 +29,6 @@ const Thumbnail = forwardRef(({result},ref) => {
       </div>
     </div>
   )
-})
+}
 
 export default Thumbnail
